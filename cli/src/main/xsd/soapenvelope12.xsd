@@ -80,7 +80,7 @@
       <xs:element name="Reason" type="tns:faultreason" />
       <xs:element name="Node" type="xs:anyURI" minOccurs="0" />
 	  <xs:element name="Role" type="xs:anyURI" minOccurs="0" />
-      <xs:element name="Detail" type="tns:detail" minOccurs="0" />
+      <xs:element name="detail" type="detail" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
