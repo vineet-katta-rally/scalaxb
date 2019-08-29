@@ -16,7 +16,8 @@ lazy val root = (project in file(".")).
   enablePlugins(NoPublish).
   aggregate(app, integration, scalaxbPlugin).
   settings(
-    scalaVersion := scala211
+    scalaVersion := scala211,
+    publishTo := Some(Resolver.file("scalaxb", file("/Users/vineet.katta/code/plugins/scalaxb"))(Resolver.ivyStylePatterns))
   )
 
 lazy val app = (project in file("cli")).
@@ -61,7 +62,7 @@ lazy val scalaxbPlugin = (project in file("sbt-scalaxb")).
     crossScalaVersions := Seq(scala210),
     scalaVersion := scala210,
     sbtPlugin := true,
-    name := "sbt-scalaxb",
+    name := "rally-sbt-scalaxb",
     // sbtVersion in Global := "0.12.4",
     // scalaVersion in Global := "2.9.2",
     description := """sbt plugin to run scalaxb""",

@@ -145,7 +145,7 @@ trait XMLProtocol extends scalaxb.XMLStandardTypes {
       (scalaxb.ElemName(Some("http://www.w3.org/2003/05/soap-envelope"), "Reason")) ~ 
       opt(scalaxb.ElemName(Some("http://www.w3.org/2003/05/soap-envelope"), "Node")) ~ 
       opt(scalaxb.ElemName(Some("http://www.w3.org/2003/05/soap-envelope"), "Role")) ~ 
-      opt(scalaxb.ElemName(Some("http://www.w3.org/2003/05/soap-envelope"), "Detail")) ^^
+      opt(scalaxb.ElemName(None, "detail")) ^^
       { case p1 ~ p2 ~ p3 ~ p4 ~ p5 =>
       soapenvelope12.Fault(scalaxb.fromXML[soapenvelope12.Faultcode](p1, scalaxb.ElemName(node) :: stack),
         scalaxb.fromXML[soapenvelope12.Faultreason](p2, scalaxb.ElemName(node) :: stack),
